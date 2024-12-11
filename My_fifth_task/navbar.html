@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navbar</title>
+    <style>
+      .navbar {
+        margin-top: -8px;
+        background-color: green;
+        width: 100%;
+        float: left;
+        height: 100px;
+      }
+      li,
+      a {
+        text-decoration: none;
+        color: white;
+        list-style-type: none;
+        font-size: larger;
+      }
+      a:hover {
+        color: orange;
+      }
+
+      .list {
+        float: left;
+        padding-top: 0.7em;
+        padding-left: 8em;
+      }
+      .dropdown-content {
+        display: none;
+        width: 165px;
+      }
+      .dropdown-content a {
+        display: block;
+        color: white;
+        padding: 30px;
+        
+      }
+      .drop-btn {
+        background-color: green;
+        border: none;
+        color: white;
+        font-size: larger;
+        cursor: pointer;
+        padding-top: 0.6em;
+        padding-left: 6em;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+      
+      .drop-btn:hover {
+        color: orange;
+      }
+      .dropdown:hover .dropdown-content {
+        background-color: green;
+        display: block;
+        padding-top: 0.6em;
+        padding-left: 6em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <li class="list"><a href="#">Home</a></li>
+        <li class="list"><a href="#">About</a></li>
+        <li class="dropdown">
+          <button class="drop-btn">Products</button>
+          <div class="dropdown-content">
+            <a href="#">Engineering</a>
+            <a href="#">Telecom</a>
+            <a href="#">Energy</a>
+            <a href="#">Finance</a>
+            <a href="#">Consultancy</a>
+          </div>
+        </li>
+        <li class="list"><a href="#">Services</a></li>
+        <li class="list"><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </body>
+</html>
