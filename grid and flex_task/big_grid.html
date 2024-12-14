@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+.main-div1{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+div div{
+    background-color: cornflowerblue;
+    height: 3.5em;
+    margin: 7px;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.5rem;
+    align-content: center;
+    text-align: center;
+}
+.main-div2{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+.main-div3{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+.main-div4{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+}
+
+.header-div{
+    grid-column: 1 / 7;
+}
+.footer-div{
+    grid-column: 1 / 7;
+    padding:15px ;
+}
+/* 1 */
+.div-1{
+    grid-column: 1 /4;
+} 
+.div-2{
+    grid-column: 4/7;
+}
+/* 2 */
+.div-3{
+    grid-column:  1/ span 2;
+}
+.div-4{
+    grid-column: 3/ span 2;
+}
+.div-5{
+    grid-column: 5/ span 2;
+}
+
+    </style>
+</head>
+<body>
+  <div class="main-div1">
+<div class="header-div">60 GS is starter kit for the CSS Grid.</div>
+<div class="div-1">1</div>
+<div class="div-2">2</div>
+
+<div class="div-3">1</div>
+<div class="div-4">2</div>
+<div class="div-5">3</div>
+</div> 
+
+<div class="main-div2">
+<div class="div-6">1</div>
+<div class="div-6">2</div>
+<div class="div-6">3</div>
+<div class="div-6">5</div>
+</div>
+
+<div class="main-div3">
+<div class="div-10">1</div>
+<div class="div-11">2</div>
+<div class="div-12">3</div>
+<div class="div-13">4</div>
+<div class="div-15">5</div>
+</div>
+
+<div class="main-div4">
+<div class="div-16">1</div>
+<div class="div-17">2</div>
+<div class="div-18">3</div>
+<div class="div-19">4</div>
+<div class="div-20">5</div>
+<div class="div-21">6</div>
+</div> 
+<div class="main-div1">
+<div class="footer-div">Why 60? <p>Because the number 60 is dividable by 2,3,4,5 and 6.</p></div>
+</div> </div> 
+</body>
+</html>

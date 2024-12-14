@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        background-color: darkseagreen;
+      }
+      .main-div {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        background-color: lightskyblue;
+        border-radius: 8px;
+        width: 50%;
+        margin: 0 auto;
+      }
+      .main-div .sub-div {
+        margin:8px;
+        width: 155px;
+        height: 4em;
+        font-size: 2rem;
+        align-content: center;
+        text-align: center;
+      }
+      .main-div div{
+        box-shadow: 0 8px 2px -2px rgb(121, 154, 155);
+      }
+      .output-div {
+        background-color: white;
+        grid-column: 1 / span 4;
+        height: 90px;
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="output-div"></div>
+      <div class="sub-div" style="background-color: gainsboro;margin-left: 20px;">1</div>
+      <div class="sub-div" style="background-color: gainsboro">2</div>
+      <div class="sub-div" style="background-color: gainsboro">3</div>
+
+      <div class="sub-div" style="background-color: khaki">+</div>
+
+      <div class="sub-div" style="background-color: gainsboro;margin-left: 20px;">4</div>
+      <div class="sub-div" style="background-color: gainsboro">5</div>
+      <div class="sub-div" style="background-color: gainsboro">6</div>
+
+      <div class="sub-div" style="background-color: khaki">-</div>
+
+      <div class="sub-div" style="background-color: gainsboro;margin-left: 20px;">7</div>
+      <div class="sub-div" style="background-color: gainsboro">8</div>
+      <div class="sub-div" style="background-color: gainsboro">9</div>
+
+      <div class="sub-div" style="background-color: khaki">*</div>
+
+      <div class="sub-div" style="background-color: rgb(228, 126, 126);margin-left: 20px;">C</div>
+      <div class="sub-div" style="background-color: gainsboro;margin-bottom: 20px;">0</div>
+      <div class="sub-div" style="background-color: gainsboro">=</div>
+
+      <div class="sub-div" style="background-color: khaki">/</div>
+    </div>
+  </body>
+</html>

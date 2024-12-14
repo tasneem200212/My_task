@@ -1,0 +1,164 @@
+body {
+    background-color: rgb(12, 12, 65);
+  }
+  span {
+    color: red;
+  }
+  h1 {
+    padding-left: 40px;
+    color: white;
+  }
+  .main-div {
+    display: flex;
+  }
+  .main-div {
+    display: flex;
+  }
+  .menu-content li {
+    padding: 25px;
+    padding-left: 55px ;
+    list-style-type: none;
+    font-size: 1.5rem;
+  }
+  a{
+    color: rgb(147, 144, 144);
+    text-decoration: none;
+  }
+  .menu-div {
+    width: 30%;
+    margin: -7px;
+    height: 46.1em;
+    background-color: rgb(40, 40, 86);
+  }
+  /* part2*/
+  .dashboard  {
+    background-color: rgb(12, 12, 65);
+  }
+  .right-div {
+    margin-left: 40px;
+    width: 100%;
+  }
+  .header-div {
+    width: 100%;
+    height: 6em;
+  }
+  img {
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    float: left;
+    padding-right:5px;
+  }
+  h2 {
+    color: white;
+    float: left;
+  }
+  h2 i {
+    padding-right: 10px;
+  }
+  p {
+    color: white;
+  }
+  .profile-div {
+    margin-left: 82%;
+  }
+
+  /* part3*/
+  .card-div {
+    display: flex;
+    padding-top: 18px;
+  }
+  .card-div div {
+    padding-left: 15px;
+    margin-right: 15px;
+    margin-left: 11px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    width: 40%;
+    color: rgb(147, 144, 144);
+    font-size: 1.7rem;
+    height: 5em;
+    background-color:rgb(40, 40, 86);
+  }
+  .card-div div i {
+    margin-right: 10px;
+    font-size: 2.5rem;
+    top: 50px;
+    right: 0px;
+  }
+  /* div1 */
+  .card-div .div-1 i {
+    position: absolute;
+  }
+  .div-1 {
+    position: relative;
+  }
+  /* div2 */
+  .card-div .div-2 i {
+    position: absolute;
+  }
+  .div-2 {
+    position: relative;
+  }
+  /* div3 */
+  .card-div .div-3 i {
+    position: absolute;
+  }
+  .div-3 {
+    position: relative;
+  }
+  /* div4 */
+  .card-div .div-4 i {
+    position: absolute;
+  }
+  .div-4 {
+    position: relative;
+  }
+  /* part4*/
+  .content-div{
+  display: flex;
+  border-collapse: collapse;
+  height: 25em;
+  width: 100%;
+}
+.table-div{
+  position: relative;
+  background-color: rgb(40, 40, 86);
+  width: 68%;
+}
+.btn{
+  position: absolute;
+  color: red;
+  right: 15px;
+  top: 20px;
+}
+.content-div div{
+  margin: 10px;
+}
+table{
+  color: white;
+  width: 100%;
+  text-align: left;
+}
+th, td{
+padding: 20px;
+border-bottom: 1px solid #ddd;
+}
+h4{
+  padding-left: 20px;
+  color: red;
+}
+.pic-div{
+  position: relative;
+  background-color: rgb(40, 40, 86);
+  width: 28%;
+}
+.pic-div img{
+  position: absolute;
+  margin: 0 auto;
+  width: 50%;
+  height: 160px;
+  border-radius: 50%;
+  top: 25%;
+  left: 25%;
+}

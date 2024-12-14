@@ -1,0 +1,176 @@
+.grid-div {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        background-color: rgb(207, 211, 211);
+      }
+      .grid-div div {
+        color: white;
+        text-align: center;
+        align-content: center;
+        height: 3em;
+        margin: 6px;
+        padding: 10px;
+      }
+      .div1 {
+        position: relative;
+        background-color: cornflowerblue;
+      }
+      .div1 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.4em;
+      }
+      .div2 {
+        position: relative;
+        background-color: mediumaquamarine;
+        grid-column: 2 / span 2;
+      }
+      .div2 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:11.2em;
+      }
+      .div3 {
+        position: relative;
+        background-color: orange;
+      }
+      .div3 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.4em;
+      }
+      .div4 {
+        position: relative;
+        background-color: rgb(218, 71, 8);
+      }
+      .div4 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.4em;
+      }
+      .div5 {
+        position: relative;
+        background-color: darkblue;
+      }
+      .div5 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.6em;
+      }
+      .div6 {
+        position: relative;
+        grid-column: 1 / span 2;
+        background-color: rgb(218, 71, 8);
+      }
+      .div6 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:11.3em;
+      }
+      .div7 {
+        position: relative;
+        background-color: darkblue;
+      }
+      .div7 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.3em;
+      }
+      .div8 {
+        position: relative;
+        background-color: cornflowerblue;
+      }
+      .div8 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.3em;
+      }
+      .div9 {
+        position: relative;
+        background-color: mediumaquamarine;
+      }
+      .div9 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.3em;
+      }
+      .div10 {
+        position: relative;
+        background-color: orange;
+      }
+      .div10 i {
+        font-size: 1.3em;
+        position:absolute;
+        top: 6px;
+        right:5.3em;
+      }
+                                           /**************Flex************/
+      .flex-div {
+        display: flex;
+        margin-top: 30px;
+      }
+      .x-y-img {
+        width: 66%;
+        height: 30em;
+      }
+      .card-div {
+        margin-top: 2%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card-div div {
+        color: azure;
+        position: relative;
+        align-content: center;
+        text-align: center;
+        width: 250px;
+        height: 9.6em;
+        margin: 5px;
+        background-color: rgb(45, 45, 45);
+      }
+      .card-div div i {
+        color: white;
+        font-size: 1.6rem;
+      }
+      span {
+        font-size: 2rem;
+      }
+      .icon-div1 i {
+        position: absolute;
+        top: 12px;
+        right: 4.5em;
+      }
+      .icon-div2 i {
+        position: absolute;
+        top: 12px;
+        right: 4.5em;
+      }
+      .icon-div3 i {
+        position: absolute;
+        top: 12px;
+        right: 4.5em;
+      }
+      .icon-div4 i {
+        position: absolute;
+        top: 12px;
+        right: 4.5em;
+      }
+      .icon-div5 i {
+        position: absolute;
+        top: 12px;
+        right: 4.3em;
+      }
+      .icon-div6 i {
+        position: absolute;
+        top: 12px;
+        right: 4.5em;
+      }
