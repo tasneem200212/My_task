@@ -1,6 +1,6 @@
 .main-div{
     /* margin-top: -10rem; */
-    background-image: url(img-portfolio.webp);
+    background-image: url(background-portfolio.webp);
     background-repeat:no-repeat;
     height: 55rem;
     width: 100%;
@@ -10,9 +10,7 @@
     background-color: white;
     border: none;
     padding: 0.8rem;
-    padding-top: 0.8rem;
     font-size: 1.4rem;
-    padding-bottom: 0.8rem;
     border-radius: 0.3rem;
 }
 .content-div{
@@ -20,12 +18,12 @@
     font-family:'Times New Roman', Times, serif;
     padding-top: 15rem;
     padding-left: 7rem;
+    color: white;
 }
 .second-div{
     display: flex;
     gap: 2rem;
     margin: 1rem;
-    height: 40rem;
 }
 .aboutme-div{
     background-color: #A2A0A0;   
@@ -48,6 +46,7 @@ span{
 .mypic-img{
     width: 100%;
     border-radius: 50%;
+    object-fit: cover;
 }
 .Third-div{
 background-color: #A2A0A0;
@@ -97,6 +96,7 @@ h2{
 .Third-div1 .div-1 img{
 margin-top: 2rem;
 border-radius: 0 0 0.5rem 0.5rem;
+object-fit: cover;
 }
 .fourd-div{
 margin-top: 4rem;
@@ -156,13 +156,16 @@ a{
         height: 10%;
      }
      .main-div .content-div{
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         padding-bottom: 8rem;
      }
     .second-div{
         display: flex;
         flex-direction: column;
         margin-bottom: 6rem;    
+    }
+    .about-p{
+        font-size: 1.5rem;
     }
     .second-div div{
      font-size: small;
@@ -174,7 +177,7 @@ a{
     width: 100%;
   }
    h2{
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
    .fourd-div{
     display: flex;
@@ -187,7 +190,21 @@ a{
     margin: 0 auto;
    } 
     }
-
+    @media screen and (max-width:1000px) {
+        .main-div .content-div{
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+            .about-p{
+                font-size: 1.8rem;
+            }
+            .fourd-div .skill-1 p span{
+                font-size: 1.3rem;
+    }
+    .fourd-div .skill-1 p{
+        padding: 0.8rem;
+    }
+    }
 /*contact page*/
 .contac-form p{
     padding-left: 12rem;
@@ -251,4 +268,7 @@ font-size: 1.3rem;
     }
 
 
+}
+.z-1{
+    z-index: 1;
 }
