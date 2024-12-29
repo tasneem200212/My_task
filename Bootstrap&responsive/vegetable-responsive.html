@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vegetable Shoping</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="vegetable-responsive.css">
+    <style>
+        @media screen and (max-width:800px) {
+          .product-grid{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items:center;
+          }  
+        }
+        @media screen and (max-width:800px) {
+          .product-card{
+            width: 70%;}  
+        }
+        @media screen and (max-width:800px) {
+          .main-div{
+          display: none;
+          }  
+        }
+        @media screen and (max-width:800px) {
+          .navbar1{
+            width: 100%;
+          display:flex;
+          flex-wrap: wrap;
+          font-size:smaller;
+          }  
+        }
+        @media screen and (max-width:800px) {
+          #navbar-menu{
+          font-size:x-small;
+          }  
+        }
+        @media screen and (max-width:800px) {
+          .navbar2{
+            display: inline;
+          }
+        }
+        @media screen and (max-width:800px) {
+          .nav{
+            display:inline-flex;
+            width: 100%;
+            height: 6rem;
+            flex-wrap: wrap;
+          }
+        }
+        @media screen and (max-width:800px) {
+          .icons-nav{
+          display:flex;
+          justify-content:center;
+
+          }
+        }
+        @media screen and (max-width:800px) {
+          .third-row{
+          display:flex;
+          flex-wrap: wrap;
+          justify-content:center;
+
+          }
+        }
+        @media screen and (max-width:800px) {
+          .third-navbar{
+          display:flex;
+          width: 100%;
+          justify-content:center;
+
+          }
+        }
+        @media screen and (max-width:800px) {
+          .select2{
+          display:flex;
+          width: 40%;
+          justify-content:flex-start;
+
+          }
+        }        
+        </style>
+  </head>
+  <body>
+    <div class="navbar1">
+      <div class="flex1"id="navbar-menu">
+        <a href="#">hello@colorlib.com</a>
+        <p>|</p>
+        <a href="#">Free Shipping for all Order of $99</a>
+      </div>
+
+      <div class="flex2">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+        <p>|</p>
+        <div class="dropdown">
+            <img
+            src="USA-flag.png"
+            width="30%"
+            height="22vh "
+            style="padding-top: 1rem"
+          />
+            <span>
+                English<i class="fa fa-caret-down"></i>
+              </span>
+          <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </div>
+        </div>
+        <p>|</p>
+        <i class="fa fa-user" style="padding-top: 1rem"></i>
+        <a href="#">Login</a>
+      </div>
+    </div>
+   
+<div class="box">
+    <div class="navbar2">
+      <div class="nav">
+        <a class="active" href="#home"><strong>HOME</strong></a>
+        <a class="active" href="#news"><strong>SHOP</strong></a>
+        <a class="active" href="#about"><strong>PAGES</strong></a>
+        <a class="active" href="#about"><strong>BLOG</strong></a>
+        <a class="active" href="#contact"><strong>Contact</strong></a>
+        </div>
+
+      <div class="icons-nav">
+      <a href="#"><i style="color: black;" class="fa fa-heart"></i></a>
+      <a href="#"><i style="color: black;" class="fa fa-shopping-bag"></i></a>
+      <a><span>item:</span>$150.00</a>
+      </div>
+    </div>
+</div>
+    <div class="third-row">
+        <div class="select-div">
+    <div class="custom-select-container">
+        <select class="select1">
+            <i class="fa fa-bars"><option value="" selected></i>All departments</option>
+            <option value="0">Fresh Meat</option>
+            <option value="1">Vegetables</option>
+            <option value="2">Fruit & Nut Gifts</option>
+            <option value="3">Fresh Berries</option>
+            <option value="4">Ocean Foods</option>
+            <option value="5">Butter & Eggs</option>
+            <option value="6">Fastfood</option>
+            <option value="7">Fresh Onion</option>
+            <option value="8">Papayaya & Crisps</option>
+            <option value="9">Oatmeal</option>
+            <option value="10">Fresh Bananas</option>
+            </select>    
+    </div>
+   </div>
+<div class="third-navbar">
+<select class="select2">
+    <option value="" >All Categories</option>
+    <option value="0">Fresh Meat</option>
+    <option value="1">Vegetables</option>
+    </select>
+   <p>What do you need?</p>
+   <button class="search-btn" type="button">SEARCH</button>
+</div>
+<div><i class="fa fa-phone" id="tele-icon"></i></div>
+<div>
+    <p><a style="text-decoration: none; color: black; font-weight: bold;" href="#">+6511.188.888</a></p>
+    <p>support 24/7 time</p>
+</div>
+    </div>
+
+    <div class="main-div">
+        <div class="img-div">
+          <img class="m-image" src="img6.webp" alt="Main Image">
+          <div class="main-text">
+            <p style="color: rgb(102, 165, 6);">FRUIT FRESH</p>
+            <h1 style="font-weight: bold; font-size: 2.5rem;">Vegetable 100% Organic</h1>
+            <p style="color: gray;">Free Pickup and Delivery Available</p>
+            <button class="shop-btn" type="button">SHOP NOW</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="img1.webp" alt="Vegetables">
+          <p>VEGETABLES</p>
+        </div>
+        <div class="product-card">
+          <img src="img3.webp" alt="Drink Fruits">
+          <p>DRINK FRUITS</p>
+        </div>
+        <div class="product-card">
+          <img src="img4.webp" alt="Drink Fruits">
+          <p>DRINK FRUITS</p>
+        </div>
+        <div class="product-card">
+          <img src="img5.webp" alt="Fresh Fruits">
+          <p>FRESH FRUIT</p>
+        </div>
+      </div>
+      
+  </body>
+</html>

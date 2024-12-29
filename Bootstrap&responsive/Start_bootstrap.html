@@ -30,6 +30,21 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+     @media screen and (max-width:800) {
+     #grid{
+      display: grid;
+      grid-template-columns:auto;
+  }  
+}
+/* @media screen and (max-width:800) {
+     .text{
+    font-size: xx-small;
+    margin: 0 auto;
+    width: 50%;
+  }  
+} */
+
     </style>
 </head>
 
@@ -64,10 +79,11 @@
         <div>
 
             <div class="container-fluid d-flex flex-column mt-5">
+                <div class="text">
                 <h1 style="font-size: 100px;" class="p-5 pb-3">Showcase your <br> app beautifully.</h1>
                 <p class="ps-5 fs-5">Launch your mobile app landing page faster with this free,
                     <br> open source theme from Start Bootstrap !
-                </p>
+                </p></div>
 
                 <div class="ps-5 pt-3">
                     <a class="me-lg-3 mb-4 mb-lg-0 w-25" href="#!"><img class="app-badge w-25 img-sm"
@@ -85,9 +101,10 @@
             right: 155px; top:50px">
 
         </div>
-        <div><img src="p1-telphone.webp" class="position-absolute top-40 left-40" style="top: 70px;
+        <div><img src="p1-telphone.webp" class="position-absolute top-40 left-40 d-none d-md-none d-lg-block" style="top: 70px;
     left: 743px;"></div>
     </div>
+    <!--my section-->
     <div class="container-fluid bg-primary text-white ">
         <p class="m-auto text-center pt-5 fs-3 w-50">
             "An intuitive solution to a common problem that we all face,wrapped up
@@ -97,11 +114,11 @@
     </div>
 
     <div class="container m-auto d-flex justify-content-center mt-5">
-        <div class="position-relative rounded-circle bg-primary  m-5 text-center"
+        <div class="position-relative rounded-circle bg-primary  m-5 text-center d-none d-md-none"
             style="height: 300px; padding: 150px;">
             <img class="position-absolute top-50 start-0 translate-middle-y mt-2" src="p1-telphone.webp" />
         </div>
-        <div class="m-5 p-5">
+        <div class="m-5 p-5" id="grid">
             <div class="row">
                 <div class="col">
                     <i class="fa fa-tablet text-primary fa-3x pb-3"></i>
