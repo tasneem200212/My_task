@@ -101,11 +101,11 @@
 // 9-Write a function to shuffle the elements of an array randomly.
   
 //Fisher-Yates 
-// function shuffle(array){
-// for(let i=array.length-1;i>0;i--){
-// var index=Math.floor(Math.random()* (i+1));
-// [array[i],array[index]]=[array[index],array[i]];
-// }
-// return array;
-// }
-// console.log(shuffle([1, 2, 3, 4, 5, 6]));
+function shuffle(array){
+for(let i=array.length-1;i>0;i--){
+var index=Math.floor(Math.random()* (i+1));
+[array[i],array[index]]=[array[index],array[i]];
+}
+return array;
+}
+console.log(shuffle([1, 2, 3, 4, 5, 6]));
