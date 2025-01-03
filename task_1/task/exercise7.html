@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise #7:</title>
+</head>
+<body>
+<select name="select" id="select" onchange="changeImage()">
+<option value="jo">Jordan</option>
+<option value="no">Norway</option>
+<option value="ca">Canada</option>
+<option value="pa">palestine</option>
+    </select> 
+    <br><br>
+    <img id="displayImage" src="task/images/R.jpg" alt="" width="50%" >
+    
+
+  <script>
+    let select = document.getElementById("select");
+    let displayImage = document.getElementById("displayImage");
+    function changeImage() {
+if(select.value=="jo"){
+    displayImage.src="task/images/R.jpg";
+}
+else if(select.value=="ca"){
+    displayImage.src="task/images/OIPcanda.jpg";
+}
+else if(select.value=="no"){
+    displayImage.src="task/images/OIP.jpg";
+}
+else if(select.value=="pa"){
+    displayImage.src="task/images/p-flag.jpg";
+}
+}
+select.addEventListener("change", changeImage);
+</script>  
+</body>
+</html>

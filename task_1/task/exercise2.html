@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise #2: Changing box color on click</title>
+    <style>
+        #mydiv {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        /* TODO: write JS code here */
+    </script>
+</head>
+<body>
+<div onclick="changecolor()" id="mydiv"></div>
+
+<script>
+
+let array=["blue","pink","red"];
+let num=0;
+function changecolor(){
+let result=document.getElementById("mydiv");
+result.style.backgroundColor=array[num];
+num=(num+1)% array.length;
+}
+
+
+
+
+</script>
+</body>
+</html>

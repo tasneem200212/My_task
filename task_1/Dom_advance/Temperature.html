@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="icon" href="temperature-logo.jpg">
+    <style>
+        body{
+            background-color: #D4EBF8;
+        }
+    .main-div{
+        background-color:#0A3981;
+        width: 50%;
+        margin: 0 auto;
+        height: 80vh;
+        font-size: 1.5rem;
+        color: #D4EBF8;
+        margin-top: 2rem;
+        padding-left: 6rem;
+    }
+#enterTemperature{
+    width: 40vw;
+    height: 5vh;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.4rem;
+    border: none;
+}
+select{
+    width: 40.6vw;
+    height: 5vh; 
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; 
+    border-radius: 0.4rem;
+    border: none;
+}
+h1{
+    text-align: center;
+    padding-top: 4.5rem;   
+}
+#convertbutton{
+    margin-left: 35%;
+    width: 10vw;
+    height: 5vh;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    border-radius: 0.4rem;
+    border: none;
+}
+    </style>
+</head>
+<body>
+
+   <div class="main-div">
+    <h1>Temperature Converter</h1> 
+    <label>Enter Temperature : </label><br>
+    <input type="number" id="enterTemperature" placeholder="temperature"><br>
+    <label>Choose Unit : </label><br>
+    <select name="unit" id="unit">
+      <option value="">--Please choose the Unit--</option>
+      <option value="Fahrenheit">Fahrenheit</option>
+      <option value="Celsius">Celsius</option>
+    </select><br>
+    <input type="button" id="convertbutton" value="Convert" onclick="temperatureconverter()" >
+    <p id="result"></p>
+   </div>
+
+
+<script>  
+function temperatureconverter(){ 
+let enterTemperature=parseFloat(document.getElementById("enterTemperature").value);
+let unit=document.getElementById("unit").value;
+let result;
+
+
+
+if(unit==="Celsius"){
+ result=`${enterTemperature}°C is  &nbsp;  ${(enterTemperature * 9/5 +32).toFixed(2)}°F`;   
+}
+else {
+    result=`${enterTemperature}°F is &nbsp;  ${((enterTemperature-32) * 5/9).toFixed(2)}°C`;   
+
+}
+document.getElementById("result").innerHTML=result
+}
+</script>
+</body>
+</html>

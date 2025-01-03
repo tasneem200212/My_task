@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-list</title>
+    <link rel="icon" href="todolist-logo.png">
+    <style>
+     .todolist-div{
+        background-color:#789DBC;
+        margin: 0 auto;
+        width: 98%;
+        height:95vh;
+        text-align: center;
+     }
+     h1{
+        color: #C9E9D2;
+        padding-top: 50px;
+        font-size: 4rem;
+     }
+    
+     #addButton{
+        font-weight: bold;
+        padding: 1.5rem;
+        background-color: #C9E9D2 ;
+        border: none;
+        border-radius: 0.3rem;
+     }
+
+    #addlist{
+    padding: 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+    }
+    #todolist{
+    list-style-type: none;
+    font-size: 2rem;
+    }
+
+    #todolist li {
+    background-color: #C9E9D2 ;
+    border-radius: 0.3rem;
+    width: 80%;
+    text-align: left;
+    margin: 5px auto;
+    padding: 10px;
+    padding-left: 20px;
+
+
+    }
+
+
+    </style>
+</head>
+<body>
+<div class="todolist-div">
+ <h1>To Do List</h1> 
+ <input type="text" id="addlist" size="50" placeholder="Task name"> 
+ <input type="button" id="addButton" value="Add Task" onclick="interactive()"> 
+ <ul id="todolist">
+</ul>
+
+</div>
+
+<script>
+function interactive(){
+let addlist=document.getElementById("addlist").value;
+if(addlist !== ""){
+let createlist=document.createElement("li");
+let createtext=document.createTextNode(addlist);
+let todolist= document.getElementById("todolist");
+createlist.appendChild(createtext);
+todolist.appendChild(createlist);
+
+document.getElementById("addlist").value="";
+
+let checkbox=document.createElement("input");
+checkbox.setAttribute("type","checkbox");
+document.body.appendChild(checkbox);
+checkbox.onclick= function(){
+todolist.checkbox(createlist);
+}
+createlist.appendChild(checkbox);
+todolist.appendChild(createlist);
+checkbox.style.width="50px"
+checkbox.style.height="20px"
+
+let deletebtn=document.createElement("button");
+deletebtn.textContent="Delete";
+deletebtn.onclick=function(){
+todolist.removeChild(createlist);
+}
+createlist.appendChild(deletebtn);
+todolist.appendChild(createlist);
+deletebtn.style.width="70px"
+deletebtn.style.height="40px"
+deletebtn.style.backgroundColor="#789DBC";
+deletebtn.style.border="none";
+deletebtn.style.borderRadius="0.5rem";
+// deletebtn.style.color="#C9E9D2";
+deletebtn.style.fontSize="1.2rem";
+}
+}
+
+</script>
+
+</body>
+</html>

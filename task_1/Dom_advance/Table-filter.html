@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Dynamic Table Filter</title>
+    <style>
+      #myTable{
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+      }  
+      #myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+    </style>
+</head>
+<body>
+  <h1>Table Filter</h1>
+  <input type="text" id="myinput" placeholder="search.." oninput="myfunction()"> 
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:60%;">Name</th>
+      <th style="width:40%;">Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Berglunds snabbkop</td>
+      <td>Sweden</td>
+    </tr>
+    <tr>
+      <td>Island Trading</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Koniglich Essen</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td>Laughing Bacchus Winecellars</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Magazzini Alimentari Riuniti</td>
+      <td>Italy</td>
+    </tr>
+    <tr>
+      <td>North/South</td>
+      <td>UK</td>
+    </tr>
+    <tr>
+      <td>Paris specialites</td>
+      <td>France</td>
+    </tr>
+  </table> 
+
+
+  <script>
+function myfunction(){
+    var input, filter, table, tr, td, i, txtValue;
+    input=document.getElementById("myinput");
+    filter= input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+
+}
+  </script>
+</body>
+</html>

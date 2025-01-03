@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <link rel="icon" href="counter-logo.jpg" />
+    <style>
+      body {
+        background-color: #f8fafc;
+      }
+      .main-div {
+        margin: 0 auto;
+        width: 50%;
+        height: 70vh;
+        background-color: #a6aebf;
+        text-align: center;
+        margin-top: 4rem;
+      }
+      h1 {
+        color: #f8fafc;
+        text-align: center;
+        padding-top: 3rem;
+      }
+      #entertime {
+        width: 25vw;
+        height: 5vh;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 0.3rem;
+      }
+      #startbutton {
+        height: 4.5vh;
+        width: 5vw;
+        border: none;
+        border-radius: 0.3rem;
+        background-color: white;
+        margin-left: 1.5rem;
+      }
+      #timer {
+        color: #f8fafc;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <h1>Countdown Timer</h1>
+      <input type="number" id="entertime" placeholder="Enter minutes :" />
+      <input
+        type="button"
+        id="startbutton"
+        value="Start"
+        onclick="Countdown()"
+      />
+      <div id="timer">00:00</div>
+    </div>
+
+    <script>
+      let timer;
+      function Countdown() {
+        clearInterval(timer);
+        let entertime = parseInt(document.getElementById("entertime").value);
+        if (isNaN(entertime) || entertime <= 0) {
+                document.getElementById("timer").innerText = "Invalid input!";
+                return;
+            }
+        let endTime = Date.now() + entertime * 60 * 1000;
+        timer = setInterval(() => {
+          let now = Date.now();
+          let time = endTime - now;
+
+          if (time <= 0) {
+            clearInterval(timer);
+            document.getElementById("timer").innerText = "Time's up!";
+          } else {
+            let minutesLeft = Math.floor(time / (1000 * 60));
+            let secondsLeft = Math.floor((time % (1000 * 60)) / 1000);
+            document.getElementById("timer").innerText=
+            `${String(minutesLeft).padStart(2, "0")}:${String(secondsLeft).padStart(2, "0")}`;
+          }
+        }, 100);
+      }
+    </script>
+  </body>
+</html>
