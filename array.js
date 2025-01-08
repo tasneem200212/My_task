@@ -532,16 +532,16 @@ Ex: evenIndexOddLength(strings) => ["madrasa"]
 **try more cases by your self
 */
 
-function evenIndexOddLength(strings){
-    let result=[];
-    for(let i=0;i<strings.length;i++){
-            if(strings[i].length % 2 != 0 && i % 2==0){
-            result.push(strings[i]); 
-            }
-        }
-return result;
-}
-console.log(evenIndexOddLength(["alex","mercer","madrasa","rashed2","emad","hala"]));
+// function evenIndexOddLength(strings){
+//     let result=[];
+//     for(let i=0;i<strings.length;i++){
+//             if(strings[i].length % 2 != 0 && i % 2==0){
+//             result.push(strings[i]); 
+//             }
+//         }
+// return result;
+// }
+// console.log(evenIndexOddLength(["alex","mercer","madrasa","rashed2","emad","hala"]));
 
 
 // another ways
@@ -633,3 +633,6 @@ Ex: evenNumberEvenIndex(nums) => [2,8,34]
 //     return array;
 //     }
 //     console.log(evenNumberEvenIndex([5,2,2,1,8,66,55,77,34,9,55,1])); //[2,8,34]
+
+
+document.getElementById("demo").innerHTML="Inputs radius value and get the volume of a sphere."

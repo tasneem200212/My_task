@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store Website</title>
+    <style>
+        body{
+            background-color: rgb(173, 234, 254);
+        }
+      .main-div {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem;
+      }
+      .main-div div {
+        background-color: aliceblue;
+        padding: 1.5rem;
+        font-size: 1.1rem;
+      }
+      .main-div div img {
+        width: 25vw;
+        height: 40vh;
+      }
+      .main-div div input {
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 0.4rem;
+        font-size: 1.3rem;
+        padding: 0.5rem;
+      }
+      .div1 {
+        text-align: center;
+      }
+      .second-div {
+        display: flex;
+        margin-left: 4rem;
+      }
+      .quantity-container {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+      }
+      .quantity-container button {
+        margin: 0 5px;
+        padding: 5px 10px;
+        font-size: 1rem;
+      }
+      .quantity-container input {
+        width: 50px;
+        text-align: center;
+      }
+      .cart-item {
+        margin-bottom: 20px;
+      }
+      .dark-mode {
+  background-color: black;
+  color: white;
+}
+    </style>
+  </head>
+  <body>
+    <div class="main-div">
+      <div class="sub-div">
+        <img src="iphone.png" alt="iPhone 13 Pro" class="img" />
+        <pre>iPhone 13 Pro                               <span class="price"><b>900 JD</b></span></pre>
+        <div class="div1">
+          <input class="addbutton" type="button" value="Add to Cart" />
+        </div>
+      </div>
+      <div class="sub-div">
+        <img src="headset.png" alt="Headset" class="img" />
+        <pre>Headset                               <span class="price"><b>150 JD</b></span></pre>
+        <div class="div1">
+          <input class="addbutton" type="button" value="Add to Cart" />
+        </div>
+      </div>
+      <div class="sub-div">
+        <img src="keboard.jpg" alt="Keyboard" class="img" />
+        <pre>Keyboard                               <span class="price"><b>60 JD</b></span></pre>
+        <div class="div1">
+          <input class="addbutton" type="button" value="Add to Cart" />
+        </div>
+      </div>
+    </div>
+    <button onclick="myFunction()">Toggle dark mode</button>
+    <div class="second-div" >
+      <div>
+        <ul id="bottom-div"></ul>
+      </div>
+    </div>
+
+    <script>
+function myFunction(){
+   let darkmode= document.body.classList.toggle("dark-mode");
+   sessionStorage.setItem("mode",darkmode);
+}
+
+
+
+      const buttons = document.querySelectorAll(".addbutton");
+      const cart = document.getElementById("bottom-div");
+
+      buttons.forEach((button) => {
+        // sessionStorage.setItem("cart",listItem);
+        button.addEventListener("click", () => {
+          const parentDiv = button.closest(".sub-div");
+          const productName = parentDiv
+            .querySelector("pre")
+            .childNodes[0].textContent.trim();
+          const productPrice = parentDiv.querySelector(".price").innerText;
+          const productImageSrc = parentDiv.querySelector(".img").src;
+
+      
+          const listItem = document.createElement("li");
+          listItem.classList.add("cart-item");
+
+          const productImage = document.createElement("img");
+          productImage.src = productImageSrc;
+          productImage.style.width = "20vw";
+          productImage.style.height = "30vh";
+          productImage.style.marginRight = "10px";
+
+          const productDetails = document.createTextNode(
+            `${productPrice}`
+          );
+
+          listItem.appendChild(productImage);
+          listItem.appendChild(productDetails);
+
+  
+          let deletebtn = document.createElement("button");
+          deletebtn.textContent = "X";
+          deletebtn.style.marginLeft = "10px";
+          deletebtn.onclick = function () {
+            cart.removeChild(listItem);
+          };
+
+          listItem.appendChild(deletebtn);
+
+          const quantityContainer = document.createElement("div");
+          quantityContainer.style.display="inline-flex";
+          quantityContainer.classList.add("quantity-container");
+
+          const decrementButton = document.createElement("button");
+          decrementButton.textContent = "-";
+
+          const quantityInput = document.createElement("input");
+          quantityInput.type = "number";
+          quantityInput.value = "1";
+          quantityInput.min = "1";
+          quantityInput.max = "10";
+
+          const incrementButton = document.createElement("button");
+          incrementButton.textContent = "+";
+
+          decrementButton.addEventListener("click", () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+              quantityInput.value = currentValue - 1;
+            }
+          });
+
+          incrementButton.addEventListener("click", () => {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue < 10) {
+              quantityInput.value = currentValue + 1;
+            }
+          });
+
+          quantityContainer.appendChild(decrementButton);
+          quantityContainer.appendChild(quantityInput);
+          quantityContainer.appendChild(incrementButton);
+
+          listItem.appendChild(quantityContainer);
+
+          cart.appendChild(listItem);
+        });
+      });
+    </script>
+  </body>
+</html>

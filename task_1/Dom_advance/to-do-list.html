@@ -48,7 +48,6 @@
     padding: 10px;
     padding-left: 20px;
 
-
     }
 
 
@@ -81,6 +80,7 @@ checkbox.setAttribute("type","checkbox");
 document.body.appendChild(checkbox);
 checkbox.onclick= function(){
 todolist.checkbox(createlist);
+todolist.style.textDecoration="line-through";
 }
 createlist.appendChild(checkbox);
 todolist.appendChild(createlist);

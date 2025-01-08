@@ -63,6 +63,18 @@
 
     <form class="w-75 m-auto mt-4" id="form">
         <h1 class="pb-3">Create an account</h1>
+        <div class="mb-4">
+          <label for="exampleInputName" class="form-label is-required"
+            >Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            aria-describedby="nameHelp"
+            required
+           
+          />
+        </div>
       <div class="mb-4">
         <label for="exampleInputEmail1" class="form-label is-required"
           >Email address</label>
@@ -71,27 +83,42 @@
           class="form-control"
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
+          required 
         />
         <div id="emailHelp" class="form-text">eg: username@domain.com</div>
+        <p id="aleartemail" style="color: red;font-size: 15px;"></p>
       </div>
       <div class="mb-4">
         <label for="exampleInputMobile" class="form-label is-required"
           >Mobile</label
         >
-        <input type="tel" class="form-control" id="phoneHelp" />
-        <div id="phoneHelp" class="form-text">eg: 07********</div>
+        <input type="tel" class="form-control" id="phoneHelp" required />
+        <div id="phoneHelp" class="form-text">eg: 077*******</div>
+        <p id="aleartnum" style="color: red;font-size: 15px;"></p>
       </div>
       <div class="mb-4">
         
         <label for="exampleInputpass" class="form-label is-required"
           >Create Password</label> 
           <div class="d-flex">
-        <input type="email" class="form-control" id="exampleInputpass"/>
+        <input type="password" class="form-control" id="exampleInputpass" required/>
             <i class="fa fa-eye-slash btn btn-light border-left-0"></i></div>
         <div id="passlHelp" class="form-text">
           This Password should be bettwen 6-18 characters.
         </div>
+        <p id="aleartpass" style="color: red;font-size: 15px;"></p>
       </div>
+
+      <div class="mb-4">
+        
+        <label for="exampleInputrepassword" class="form-label is-required"
+          >Confirm Password</label> 
+          <div class="d-flex">
+        <input type="password" class="form-control" id="exampleInputrepassword" required/>
+            <i class="fa fa-eye-slash btn btn-light border-left-0"></i></div>
+            <p id="aleartrepassword" style="color: red;font-size: 15px;"></p>
+      </div>
+
       <div class="mb-3 form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />
         <label class="form-check-label is-required" for="exampleCheck1"
@@ -111,19 +138,145 @@
         </label>
       </div>
       <div class="pb-4">
-        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+        <button type="submit" id="submit" class="btn btn-primary w-100">Sign Up</button>
       </div>
       <div>
-        <button type="button" class="btn btn-outline-dark w-100">
+        <button type="button" class="btn btn-outline-dark w-100"><a href="login.html" class="loginbtn">
           Already have an account?login
+        </a>
         </button>
       </div>
     </form>
+    <p id="successMessage" style="color: green; display: none;">Registration successful!</p>
+    <!-- <p id="aleartregestration" style="color: red; font-size: 18px;display: none; text-align: center;"></p> -->
+
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js"
-      integrity="sha384-3RoJImQ+Yz4jAyP6xW29kJhqJOE3rdjuu9wkNycjCuDnGAtC/crm79mLcwj1w2o/"
-      crossorigin="anonymous"
-    ></script>
+    <script>
+document.getElementById("form").onsubmit=function(event){
+  event.preventDefault(); 
+  let email=document.getElementById("exampleInputEmail1").value;
+  let reg=/^([a-z0-9._%-]+@gmail\.com$)/ig;
+  let validate=reg.test(email);
+  if(!validate){
+document.getElementById("aleartemail").innerText="Please write your email:";
+return false;
+  }
+  else {
+    document.getElementById("aleartemail").innerText = "";
+  }
+
+  let numberphone= document.getElementById("phoneHelp").value;
+ let numreg=/^(077)\d{7}$/;
+ let validatenum=numreg.test(numberphone);
+  if(!validatenum){
+document.getElementById("aleartnum").innerText="Please Rewrite your number phone:";
+event.preventDefault(); 
+return false;
+  }
+  else{
+    document.getElementById("aleartnum").innerText="";
+  }
+
+  let Password = document.getElementById("exampleInputpass").value;
+  let regpass=/^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@!$%&*?]).{6,18}$/;
+  let validatepass=regpass.test(Password);
+  if(!validatepass){
+document.getElementById("aleartpass").innerText=
+"Invalid password! Please ensure your password is:- Between 6-18 characters- Contains at least one letter- Contains at least one digit- Contains at least one special character (@$!%*?&)";
+return false;
+  }
+  else{
+    document.getElementById("aleartpass").innerText="";
+  } 
+let repassword=document.getElementById("exampleInputrepassword").value
+if(repassword!==Password){
+document.getElementById("aleartrepassword").innerText="Passwords do not match.";
+return false;
+}
+
+let full_name=document.getElementById("exampleInputName").value;
+
+//for specific user
+// localStorage.setItem('Is_Full name',full_name);
+// localStorage.setItem('Is_Email',email);
+// localStorage.setItem('Is_number phone',numberphone);
+// localStorage.setItem('Is_Password',Password);
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+let newuser = { fullName: full_name, email: email, phone: numberphone, password: Password };
+users.push(newuser);
+localStorage.setItem("users", JSON.stringify(users));
+
+console.log("New User:", newuser);
+console.log("Updated Users Array:", users);
+
+
+const successMessage=document.getElementById("successMessage");
+successMessage.style.display="block";
+setTimeout(()=>{
+  window.location.href="login.html";
+},2000);
+};
+    </script>
+    <!-- function fun(){
+      let str=document.getElementById("email").value;
+      let reg=/\w{3,4}\d*@orange.com/ig;
+     
+    console.log ( str.match(reg));
+  } -->
+
+  <!-- // examples of password
+  // let Password=[
+  //   "Tasneem2002@#$",
+  //   "Pass1",      
+  //   "Password1!",   
+  //   "Passw1!",     
+  //   "Password123456789!", 
+  //   "P@ss123",
+  // ];
+  // let regpass=/^(?=.*[a-zA-z])(?=.*\d)(?=.*[@!$%&*?]).{6,18}$/;
+  // Password.forEach((pwd) =>{
+  //   console.log(`${pwd}: ${regpass.test(pwd)}`)
+  // }
+  // );
+  
+  
+  // examples of number phone
+  // let num1="0791234567";
+  // let num2="0791234567";
+  // let num3="+962791234567";
+  // let num4="00962791234567";
+  // let num5="0812345678";
+  
+  // let reg=/^(?:\+962|00692|0)/g;
+  
+  //   console.log(num1.match(reg));
+  //     console.log(num2.match(reg));
+  //     console.log(num3.match(reg));
+  //     console.log(num4.match(reg));
+  //     console.log(num5.match(reg)); -->
+
+  <!-- //my work
+    
+  //   let email1="tasneem2002alshiyyab@gmail.com";
+  //   let email2="alshiyyabtasneem@gmail.com";
+  //   let email3="tasneem.alshiyyab2002@gmail.com";
+  //   let email4="alabadieman58@gmail.com";
+  //   let email5="yourname@gmail.com";
+
+  //   let reg=/^([a-z0-9._%-]+@gmail\.com$)/ig;
+
+  //   console.log(email1.match(reg));
+  //   console.log(email2.match(reg));
+  //   console.log(email3.match(reg));
+  //   console.log(email4.match(reg));
+  //   console.log(email5.match(reg));
+  //   // console.log(reg.test(email1))
+  //   if(reg.test(email1)==false){
+  //  alert("Please Rewrite your email:")
+  //   } -->
   </body>
+  <!-- src="https://cdn.jsdelivr.net/npm/boosted@5.3.3/dist/js/boosted.bundle.min.js"
+      integrity="sha384-3RoJImQ+Yz4jAyP6xW29kJhqJOE3rdjuu9wkNycjCuDnGAtC/crm79mLcwj1w2o/"
+      crossorigin="anonymous" -->
 </html>

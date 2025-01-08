@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      body {
+        background-color: darkseagreen;
+      }
+      .main-div {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        
+        border-radius: 8px;
+        width: 50vw;
+        margin: 0 auto;
+      }
+      .main-div .sub-div {
+        margin:8px;
+        height: 4em;
+        font-size: 2rem;
+        align-content: center;
+        text-align: center;
+      }
+      .main-div div{
+        box-shadow: 0 8px 2px -2px rgb(121, 154, 155);
+      }
+      .output-div {
+        background-color: white;
+        grid-column: 1 / span 4;
+        height: 90px;
+        margin: 20px;
+        width: 95%;
+      }
+      input{
+font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: lightskyblue;width: 50vw;margin: 0 auto;">
+      <div >
+      <input type="text" name="display" id="display"  class="output-div" readonly>
+    </div>
+    <div class="main-div">
+      <input class="sub-div" type="button" style="background-color: gainsboro;" value="1" onclick="display.value +='1' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="2" onclick="display.value +='2' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="3" onclick="display.value +='3' ">
+
+      <input class="sub-div" type="button" style="background-color: khaki" value="+" onclick="display.value +='+' ">
+
+      <input class="sub-div" type="button" style="background-color: gainsboro;" value="4" onclick="display.value +='4' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="5" onclick="display.value +='5' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="6" onclick="display.value +='6' ">
+
+      <input class="sub-div" type="button" style="background-color: khaki" value="-" onclick="display.value +='-' ">
+
+      <input class="sub-div" type="button" style="background-color: gainsboro;" value ="7" onclick="display.value +='7' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="8" onclick="display.value +='8' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="9" onclick="display.value +='9' ">
+
+      <input class="sub-div" type="button" style="background-color: khaki" value="*" onclick="display.value +='*' ">
+
+      <input class="sub-div" type="button" style="background-color: rgb(228, 126, 126);" value="C" onclick="display.value='' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro;margin-bottom: 20px;" value="0" onclick="display.value +='0' ">
+      <input class="sub-div" type="button" style="background-color: gainsboro" value="=" onclick="display.value= eval(display.value)">
+
+      <input class="sub-div" type="button" style="background-color: khaki" value="/" onclick="display.value +='/' ">
+    </div>
+  </div>
+  </body>
+</html>

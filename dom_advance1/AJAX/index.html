@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>AJAX Request with JavaScript</h1>
+
+<input type="text" placeholder="javascript" id="input" oninput="updateInput()">
+<button type="button" onclick="loadDoc()">Send Comment</button>
+
+<h2 id="h2">Get comment:</h2>
+
+<p id="demo"></p>
+
+<script>
+function updateInput(){
+    let input=document.getElementById("input").value;
+    document.getElementById("h2").innerHTML=input;
+}
+
+
+function loadDoc() {
+    let input=document.getElementById("input").value;
+    console.log("Input value: " + input);
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = input; 
+    }
+  };
+  xhttp.open("GET", "file.xml?comment=", true);
+    xhttp.send();
+}
+</script>
+
+</body>
+</html>
