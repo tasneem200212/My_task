@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+  </head>
+  <body>
+    <h1>Student Management System</h1>
+    <form id="studentinfo">
+      <input type="text" id="idnum" placeholder="Student Id" required />
+      <input type="text" id="name" placeholder="Student Name" required />
+      <input type="text" id="class" placeholder="Student Class" required />
+      <input type="text" id="GPA" placeholder="Student GPA" required />
+    </form>
+
+    <tabel>
+      <thead>
+        <tr>
+          <th>Student Id</th>
+          <th>Student Name</th>
+          <th>Student Class</th>
+          <th>Student GPA</th>
+        </tr>
+      </thead>
+      <tbody id="studentList"></tbody>
+    </tabel>
+
+    <script>
+     let students=JSON.parse(localStorage.getItem("students"));
+
+     function addstudent(student){
+    students.push(student);
+    localStorage.setItem("students",JSON.stringify([]));
+     }
+
+document.getElementById("studentinfo").addEventListener(("submit"),(e)=>{
+    e.preventDefault();
+const id=document.getElementById("idnum").value.trim();
+const name=document.getElementById("name").value.trim();
+const classs=document.getElementById("class").value.trim();
+const GPA=document.getElementById("GPA").value.trim();
+
+if(students.some(student => student.id===id)){
+    alert("Student Id must be unique.");
+    return;
+}
+addstudent({"id":id,"Student name":name,"classes":classs,"GPA":GPA});
+
+document.getElementById("studentinfo").reset();
+
+const body=document.getElementById("studentList");
+body.innerHTML='';
+
+students.forEach((student,index)=>{
+const row=document.createElement("tr");
+row.innerHTML=`
+<td>${student.id}</td>
+<td>${student.name}</td>
+<td>${student.classs}</td>
+<td>${student.GPA}</td>
+<td>
+ <button onclick=""></button>
+ <button onclick=""></button>   
+</td>
+`
+})
+})
+
+
+    //   {
+    //     id = "12345";
+    //     StudentName = "Tasneem";
+    //     Class = "Software Engineering";
+    //     GPA = "3.16";
+    //   }
+    </script>
+  </body>
+</html>
