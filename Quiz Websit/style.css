@@ -1,7 +1,7 @@
-body {
-  background-image: url("/imges/lines.png");
-}
 
+body{
+  background-image: url("lines.png");
+}
 /* Main container */
 #mainDiv {
   width: 90%;

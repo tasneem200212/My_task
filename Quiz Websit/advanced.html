@@ -47,23 +47,28 @@
       <div class="main-div d-flex justify-content-between align-items-center">
         <div class="logo">
           <a style="text-decoration: none" href="welcome.html"
-            ><h1 style="color: black">Quiz<span>Site</span></h1></a
-          >
+            ><h1 style="color: black">Quiz<span>Site</span></h1></a>
         </div>
+        <nav class="d-flex gap-3 mt-3">
+          <a href="welcome.html" class="btn btn-outline-primary btn-lg">Home</a>
+          <a href="regestration.html"
+            class="btn btn-outline-primary d-flex justify-content-center align-items-center">Register</a>
+            <a href="LoginPage.html" class="btn btn-primary btn-lg">Login</a>
+        </nav>
       </div>
     </header>
 
     <main class="container">
       <h2 class="text-center mb-4">ADVANCED LEVEL</h2>
       <div class="row mt-5">
-        <div class="row mt-4">
+        <div class="row" id="main-div">
           <div class="video-container">
             <!-- Video will be dynamically inserted here -->
-            <iframe id="video-frame" frameborder="0" allowfullscreen></iframe>
+            <iframe id="video-frame" frameborder="0" allowfullscreen style="height: 350px; width: 600px;"></iframe>
           </div>
-        <div class="text-container">
+        <div class="text-container mt-5">
           <h2>Master Advanced English</h2>
-          <p>
+          <p id="pargraph">
             Welcome to the advanced level! Here, you'll challenge yourself with
             more complex grammar, vocabulary, and comprehension exercises. This
             level is designed to test your understanding of the English language
@@ -81,6 +86,10 @@
     </main>
   </body>
   <script>
+    let pargraph=document.getElementById("pargraph");
+      pargraph.style.fontSize="25px";
+      let maindiv=document.getElementById("main-div");
+      maindiv.style.marginTop="40px";
     // Function to fetch video details using YouTube Data API and set iframe src
     async function fetchVideoUrl() {
       try {
@@ -98,7 +107,7 @@
         
         // Check if the response contains valid video details
         if (data.items && data.items.length > 0) {
-          const videoDetails = data.items[0].snippet;
+          const videoDetails = data.items[0];
 
           // Extract the video URL and set it in iframe
           const videoFrame = document.getElementById('video-frame');

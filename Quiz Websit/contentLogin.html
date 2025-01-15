@@ -12,7 +12,7 @@
     <style>
       body {
         padding: 20px;
-        background-image: url("/imges/lines.png");
+        background-image: url("lines.png");
         background-repeat: repeat-x;
       }
       .feature-section {
@@ -62,15 +62,9 @@
       <div class="main-div d-flex justify-content-between align-items-center">
         <div class="logo">
           <a style="text-decoration: none" href="welcome.html"
-            ><h1 style="color: black">Quiz<span>Site</span></h1></a
-          >
+            ><h1 style="color: black">Quiz<span>Site</span></h1></a>
         </div>
         <nav class="d-flex gap-3">
-          <!-- <a href="#" class="text-decoration-none text-dark">How it works?</a>
-          <a href="#" class="text-decoration-none text-dark">Features</a>
-          <a href="#" class="text-decoration-none text-dark">About us</a> -->
-
-          <!-- <a href="#" class="btn btn-primary btn-lg">Login</a> -->
           <a
             id="btnLogout"
             href="#"
@@ -128,18 +122,18 @@
     <script>
       let btnLogout = document.getElementById("btnLogout");
       btnLogout.onclick = function () {
-        window.location.href = "/LoginPage.html";
+        window.location.href = "LoginPage.html";
         window.sessionStorage.clear();
       };
 
       function goToMenu(obj, contQuestion) {
-        window.location.href = "/Homepage.html";
+        window.location.href = "Homepage.html";
         sessionStorage.setItem("level", contQuestion);
       }
       let checked = window.sessionStorage.getItem("checkedOpenLogin");
 
       if (!checked) {
-        window.location.href = "/LoginPage.html";
+        window.location.href = "LoginPage.html";
       }
     </script>
 

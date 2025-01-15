@@ -48,5 +48,5 @@ if (contQuestion == 0) {
 let checked = window.sessionStorage.getItem("checkedOpenLogin");
 
 if (!checked) {
-  window.location.href = "/LoginPage.html";
+  window.location.href = "LoginPage.html";
 }

@@ -39,6 +39,8 @@ function login(obj) {
         return;
       } else if (checkUser.password === password) {
         if (checkbox) {
+
+          
           //Checked in CheckBox
           localStorage.setItem("rememberMe", "true");
           localStorage.setItem("email", email);
@@ -55,11 +57,13 @@ function login(obj) {
         return;
       }
 
-      //   checked in User Login Or Not
 
+
+
+      //   checked in User Login Or Not
       sessionStorage.setItem("checkedOpenLogin", "true");
 
-      window.location.href = "/contentLogin.html";
+      window.location.href = "contentLogin.html";
       // window.open("homePage.html", "_blank");
     } else {
       errorMessage.textContent = "The Email Not Found!";

@@ -129,7 +129,7 @@ form.onsubmit = function (e) {
   } else {
     // alert("Form submitted successfully!");
 
-    window.location.assign("http://127.0.0.1:5501/LoginPage.html");
+    window.location.assign("LoginPage.html");
     return false;
   }
 };

@@ -149,7 +149,7 @@ nextButton.addEventListener("click", () => {
   if (currentQuestionIndex < questions.length) {
     handelNextButton();
   } else {
-    window.location.href = "/contentLogin.html";
+    window.location.href = "contentLogin.html";
   }
 });
 startQuiz();
@@ -180,5 +180,5 @@ function countdownTimer() {
 let checked = window.sessionStorage.getItem("checkedOpenLogin");
 
 if (!checked) {
-  window.location.href = "/LoginPage.html";
+  window.location.href = "LoginPage.html";
 }
