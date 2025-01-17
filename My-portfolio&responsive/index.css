@@ -108,20 +108,22 @@ margin-top: 4rem;
 }
 .fourd-div div{
 background-color: #D9D9D9;
-border-radius: 12rem;
+border-radius: 50%;
 align-content: center;
 height: 25rem;
-width: 80%;
+width: 75%;
 margin-left:3.5rem;
 transition: transform 0.3s ease;
 }
 .fourd-div div:hover{
-    transform: scale(1.05);
-    box-shadow: 0 5px 10px #65A0A6;   
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px #65A0A6;   
 }
 .fourd-div div p{
-    font-size: 2rem;
-    font-weight: bold;   
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0; 
+    color: #2C2C2C;  
 }
 #skills{
     margin-top: 4rem;
@@ -136,6 +138,11 @@ transition: transform 0.3s ease;
  text-align: center;
  row-gap: 2rem;
  padding-bottom: 6rem;
+ transition: transform 0.3s ease;
+}
+.footer-div a:hover{
+    transform: scale(1.1);
+    box-shadow: 0 1px 10px #65A0A6;   
 }
 .links-footer a{
     font-size: 1.3em;
